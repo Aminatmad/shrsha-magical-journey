@@ -917,9 +917,10 @@ img {
     }
 
     .button-fox {
-        width: 125px;
+        width: 150px !important;
+        height: auto !important;
 
-        left: -35px;
+        left: -65px;
         bottom: -25px;
     }
 
