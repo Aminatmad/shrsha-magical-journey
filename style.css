@@ -982,6 +982,13 @@ img {
         top: 15px;
         left: 15px;
     }
+   .game-screen {
+    min-height: 100dvh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+} 
 }
 
 
