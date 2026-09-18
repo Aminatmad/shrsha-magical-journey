@@ -1,0 +1,1015 @@
+/* =========================================
+   ОСНОВНЫЕ НАСТРОЙКИ
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family:
+        "Trebuchet MS",
+        "Arial Rounded MT Bold",
+        Arial,
+        sans-serif;
+
+    color: #51351f;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   ЭКРАНЫ
+========================================= */
+
+.screen {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+
+/* =========================================
+   ГЛАВНЫЙ ЭКРАН
+========================================= */
+
+.home-screen {
+    min-height: 100vh;
+    padding: 45px 25px 80px;
+
+    background-image:
+        url("assets/images/mainbackground.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    text-align: center;
+}
+
+.home-logo {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    margin: 0 auto 10px;
+}
+
+.home-screen h1 {
+    margin: 0 auto;
+
+    font-size: clamp(38px, 6vw, 76px);
+    line-height: 1.05;
+    font-weight: 800;
+
+    color: #6d3f20;
+
+    text-shadow:
+        2px 3px 0 rgba(255, 255, 255, 0.65);
+}
+
+.home-screen h1 span {
+    color: #d97832;
+}
+
+
+/* =========================================
+   ЛИСЁНОК НА ГЛАВНОМ ЭКРАНЕ
+========================================= */
+
+.welcome-fox {
+    width: min(330px, 70vw);
+    margin: 15px auto 0;
+}
+
+.welcome-fox img {
+    width: 100%;
+    margin: auto;
+}
+
+
+/* =========================================
+   КНОПКИ ГЛАВНОГО ЭКРАНА
+========================================= */
+
+.home-buttons {
+    width: min(430px, 90vw);
+
+    margin: 100px auto 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-button {
+    position: relative;
+
+    width: 100%;
+    min-height: 75px;
+
+    border: none;
+    border-radius: 24px;
+
+    padding: 18px 30px;
+
+    font-size: 25px;
+    font-weight: 800;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.main-button:hover {
+    transform: translateY(-4px);
+}
+
+.main-button:active {
+    transform: translateY(0);
+}
+
+
+/* Начать игру */
+
+.start-button {
+    background: #f29b45;
+    color: white;
+
+    border: 5px solid #fff1d7;
+
+    box-shadow:
+        0 8px 0 #b96227,
+        0 15px 25px rgba(91, 52, 24, 0.2);
+
+    overflow: visible;
+}
+
+.start-button:hover {
+    box-shadow:
+        0 10px 0 #b96227,
+        0 18px 30px rgba(91, 52, 24, 0.25);
+}
+
+
+/*
+   Лисёнок теперь находится НЕ над кнопкой,
+   а частично перекрывает её край.
+   pointer-events:none означает,
+   что он не мешает нажатию.
+*/
+
+.button-fox {
+    position: absolute;
+
+    width: 155px;
+
+    left: -60px;
+    bottom: -30px;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    filter: drop-shadow(
+        0 5px 5px rgba(70, 40, 20, 0.15)
+    );
+}
+
+
+/* Подробности */
+
+.details-button {
+    background: rgba(255, 250, 238, 0.92);
+
+    color: #8c572e;
+
+    border: 4px solid #e9b879;
+
+    box-shadow:
+        0 7px 0 #c18a4d,
+        0 12px 22px rgba(91, 52, 24, 0.15);
+}
+
+.details-button:hover {
+    background: white;
+}
+
+
+/* =========================================
+   ПОДРОБНОСТИ
+========================================= */
+
+.details-section {
+    width: min(850px, 90%);
+    min-height: 720px;
+    margin: 250px auto 0;
+
+    padding: 55px 40px;
+
+    border-radius: 45px;
+
+    background: rgba(255, 249, 234, 0.96);
+    border: 8px solid rgba(255, 255, 255, 0.85);
+
+    box-shadow:
+        0 20px 50px rgba(83, 49, 26, 0.2);
+        position: relative;
+}
+
+.details-section h2 {
+    margin: 0 0 35px;
+
+    font-size: clamp(30px, 5vw, 50px);
+    line-height: 1.1;
+
+    color: #704523;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.info-card {
+    padding: 25px;
+
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    border: 3px solid #edc48f;
+
+    box-shadow:
+        0 8px 18px rgba(84, 51, 25, 0.1);
+}
+.info-card img {
+    width: 90px;
+    height: 90px;
+
+    object-fit: contain;
+
+    margin: 0 auto 15px;
+}
+
+.info-card h3 {
+    margin: 0 0 10px;
+
+    color: #d27732;
+    font-size: 22px;
+}
+
+.info-card p {
+    margin: 0;
+
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   ЭКРАН ВОЛШЕБНОГО ЛЕСА
+========================================= */
+
+.forest-screen {
+    min-height: 100vh;
+
+    padding: 35px 25px 70px;
+
+    background-image:
+        url("assets/images/forestbackground.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.forest-content {
+    width: min(950px, 95%);
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.forest-fox {
+    width: min(250px, 55vw);
+
+    margin: 15px auto 0;
+
+    filter:
+        drop-shadow(
+            0 12px 12px rgba(40, 70, 35, 0.2)
+        );
+}
+
+.forest-content h1 {
+    margin: 10px 0 8px;
+
+    font-size: clamp(42px, 6vw, 68px);
+
+    color: #4c7136;
+
+    text-shadow:
+        2px 3px 0 rgba(255, 255, 255, 0.75);
+}
+
+.forest-subtitle {
+    max-width: 650px;
+
+    margin: 0 auto 40px;
+
+    font-size: 20px;
+    line-height: 1.5;
+
+    color: #4e5737;
+}
+
+
+/* =========================================
+   СТРЕЛКА НАЗАД
+========================================= */
+
+.back-button {
+    position: absolute;
+
+    top: 25px;
+    left: 25px;
+
+    width: 62px;
+    height: 62px;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    z-index: 20;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.back-button img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.back-button:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+
+/* =========================================
+   УРОВНИ
+========================================= */
+
+.levels {
+    width: min(720px, 95%);
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.level-button {
+    position: relative;
+
+    width: 100%;
+    min-height: 85px;
+
+    padding: 12px 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    border: 4px solid #e4bd78;
+    border-radius: 30px;
+
+    background: rgba(255, 249, 229, 0.96);
+
+    color: #684422;
+
+    box-shadow:
+        0 7px 0 #bc8b4a,
+        0 10px 20px rgba(57, 79, 40, 0.15);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.level-button:not(.locked):hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 11px 0 #bc8b4a,
+        0 15px 25px rgba(57, 79, 40, 0.2);
+}
+
+.level-button.locked {
+    opacity: 0.55;
+    cursor: pointer;
+}
+
+.level-number {
+    flex-shrink: 0;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e99a48;
+
+    color: white;
+
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.level-text {
+    flex: 1;
+
+    text-align: left;
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.level-lock {
+    font-size: 24px;
+}
+
+
+/* =========================================
+   ЭКРАН ЗАДАНИЯ
+========================================= */
+
+.game-screen {
+    min-height: 100vh;
+
+    padding: 80px 20px;
+
+    background-color: #fff3dc;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition:
+        background-image 0.3s ease;
+}
+
+.task-card {
+    width: min(800px, 94%);
+
+    margin: 0 auto;
+
+    padding: 35px;
+
+    border-radius: 40px;
+
+    background: rgba(255, 252, 243, 0.94);
+
+    border: 5px solid rgba(238, 192, 119, 0.85);
+
+    box-shadow:
+        0 20px 45px rgba(78, 49, 25, 0.18);
+
+    text-align: center;
+}
+
+.task-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.task-number {
+    padding: 9px 17px;
+
+    border-radius: 20px;
+
+    background: #f2b263;
+
+    color: white;
+
+    font-weight: 800;
+}
+
+.question-icon {
+    width: 55px;
+    height: 55px;
+
+    object-fit: contain;
+}
+
+#task-title {
+    margin: 10px 0 25px;
+
+    font-size: clamp(28px, 5vw, 45px);
+
+    color: #704523;
+}
+
+.task-picture {
+    width: min(330px, 80vw);
+    height: 260px;
+
+    margin: 0 auto 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-picture img {
+    max-height: 100%;
+    max-width: 100%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 10px 10px rgba(74, 48, 26, 0.12)
+        );
+}
+
+
+/* =========================================
+   ОТВЕТЫ
+========================================= */
+
+.answers {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+
+    max-width: 650px;
+
+    margin: 0 auto;
+}
+
+.answer-button {
+    min-height: 70px;
+
+    padding: 15px;
+
+    border: 3px solid #dfa968;
+    border-radius: 22px;
+
+    background: #fffaf0;
+
+    color: #694523;
+
+    font-size: 21px;
+    font-weight: 800;
+
+    box-shadow:
+        0 5px 0 #c68d4e;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.answer-button:hover {
+    transform: translateY(-3px);
+
+    background: #fff1d5;
+
+    box-shadow:
+        0 8px 0 #c68d4e;
+}
+
+.answer-button:active {
+    transform: translateY(1px);
+
+    box-shadow:
+        0 3px 0 #c68d4e;
+}
+
+
+/* =========================================
+   ГОЛОСОВОЕ ЗАДАНИЕ
+========================================= */
+
+.voice-area {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.voice-instruction {
+    margin: 15px 0 25px;
+
+    font-size: 19px;
+    line-height: 1.5;
+}
+
+.voice-button {
+    min-width: 240px;
+
+    padding: 18px 25px;
+
+    border: none;
+    border-radius: 25px;
+
+    background: #e88d3f;
+
+    color: white;
+
+    font-size: 20px;
+    font-weight: 800;
+
+    box-shadow:
+        0 7px 0 #b96127;
+}
+
+.voice-button:hover {
+    transform: translateY(-3px);
+}
+
+.voice-button.recording {
+    background: #c85b4c;
+}
+
+.voice-status {
+    min-height: 30px;
+
+    margin: 20px 0;
+
+    font-weight: 700;
+}
+
+.voice-finish-button {
+    padding: 15px 25px;
+
+    border: 3px solid #83a95e;
+    border-radius: 20px;
+
+    background: #e8f2d9;
+
+    color: #4f7139;
+
+    font-weight: 800;
+}
+
+
+/* =========================================
+   МОДАЛЬНЫЕ ОКНА
+========================================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(55, 40, 25, 0.45);
+
+    backdrop-filter: blur(4px);
+}
+
+.modal-window {
+    position: relative;
+
+    width: min(500px, 95vw);
+
+    padding: 40px 30px 35px;
+
+    border-radius: 35px;
+
+    background: #fffaf0;
+
+    border: 5px solid #e4b36e;
+
+    box-shadow:
+        0 25px 60px rgba(49, 34, 20, 0.3);
+
+    text-align: center;
+
+    animation: modalAppear 0.25s ease;
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-close {
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #9b6a3b;
+
+    font-size: 32px;
+
+    cursor: pointer;
+}
+
+.modal-fox {
+    width: 130px;
+
+    margin: 0 auto 10px;
+}
+
+.modal-window h2 {
+    margin: 10px 0;
+
+    font-size: 34px;
+
+    color: #704523;
+}
+
+.modal-window p {
+    margin: 10px auto 25px;
+
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   КНОПКИ МОДАЛОК
+========================================= */
+
+.modal-button {
+    min-height: 58px;
+
+    padding: 14px 25px;
+
+    border-radius: 20px;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.modal-button:hover {
+    transform: translateY(-3px);
+}
+
+.secondary-modal-button {
+    border: 3px solid #d9a566;
+
+    background: #fff4dd;
+
+    color: #754b28;
+}
+
+.next-modal-button {
+    border: 3px solid #7f9f5b;
+
+    background: #dcebc9;
+
+    color: #4d7137;
+}
+
+.next-modal-button span {
+    margin-left: 8px;
+
+    font-size: 25px;
+}
+
+
+/* =========================================
+   ЗВЁЗДЫ
+========================================= */
+
+.success-stars,
+.final-stars {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 15px 0 25px;
+}
+
+.success-stars img,
+.final-stars img {
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+
+    animation: starAppear 0.35s ease both;
+}
+
+.success-stars img:nth-child(2) {
+    animation-delay: 0.08s;
+}
+
+.success-stars img:nth-child(3) {
+    animation-delay: 0.16s;
+}
+
+.success-stars img:nth-child(4) {
+    animation-delay: 0.24s;
+}
+
+.success-stars img:nth-child(5) {
+    animation-delay: 0.32s;
+}
+
+@keyframes starAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.3) rotate(-20deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+
+/* =========================================
+   АДАПТИВНОСТЬ
+========================================= */
+
+@media (max-width: 750px) {
+
+    .home-screen {
+        padding-top: 30px;
+    }
+
+    .home-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .welcome-fox {
+        width: min(280px, 75vw);
+    }
+
+    .button-fox {
+        width: 100px;
+
+        left: -35px;
+        bottom: -25px;
+    }
+
+    .details-section {
+        padding: 35px 18px;
+    }
+
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .forest-screen {
+        padding-top: 85px;
+    }
+
+    .forest-fox {
+        width: 200px;
+    }
+
+    .levels {
+        width: 100%;
+    }
+
+    .level-button {
+        min-height: 75px;
+
+        padding: 10px 15px;
+
+        gap: 12px;
+    }
+
+    .level-number {
+        width: 50px;
+        height: 50px;
+
+        font-size: 23px;
+    }
+
+    .level-text {
+        font-size: 18px;
+    }
+
+    .task-card {
+        padding: 25px 18px;
+    }
+
+    .answers {
+        grid-template-columns: 1fr;
+    }
+
+    .task-picture {
+        height: 220px;
+    }
+
+    .back-button {
+        width: 52px;
+        height: 52px;
+
+        top: 15px;
+        left: 15px;
+    }
+}
+
+
+@media (max-width: 430px) {
+
+    .home-screen h1 {
+        font-size: 34px;
+    }
+
+    .main-button {
+        font-size: 21px;
+    }
+
+    .button-fox {
+        width: 85px;
+        right: -12px;
+    }
+
+    .task-picture {
+        height: 190px;
+    }
+
+    .success-stars img,
+    .final-stars img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .modal-window {
+        padding: 30px 20px;
+    }
+}

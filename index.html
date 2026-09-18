@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Волшебное путешествие Лисёнка Стеши</title>
+
+    <!-- ВАЖНО: файл называется style.css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         ГЛАВНЫЙ ЭКРАН
+    ========================== -->
+    <main id="home-screen" class="screen home-screen">
+
+        <img
+            class="home-logo"
+            src="assets/images/foxlogoicon.png"
+            alt="Лисёнок Стеша"
+        >
+
+        <h1>
+            Волшебное путешествие<br>
+            <span>Лисёнка Стеши</span>
+        </h1>
+
+        <div class="home-buttons">
+
+            <button id="start-game-button" class="main-button start-button">
+                <img
+                    class="button-fox"
+                    src="assets/images/foxwelcome.png"
+                    alt=""
+                >
+                <span>Начать игру</span>
+            </button>
+
+            <button id="details-button" class="main-button details-button">
+                Узнать подробности
+            </button>
+
+        </div>
+
+        <!-- Информация на главном экране -->
+        <section id="details-section" class="details-section">
+
+            <h2>Как работает<br>наш тренажёр?</h2>
+
+            <div class="info-cards">
+
+                <article class="info-card">
+                    <img
+                        src="assets/images/journeyicon.png"
+                        alt=""
+                    >
+                    <h3>Волшебное путешествие</h3>
+                    <p>
+                        Отправляйся вместе с Лисёнком Стешей
+                        в увлекательное путешествие.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <img
+                    class="knowlege-icon"
+                        src="/assets/images/knowlegeicon.png"
+                        alt=""
+                    >
+                    <h3>Проверка знаний</h3>
+                    <p>
+                        Выполняй задания и выбирай
+                        правильные ответы.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <img
+                        src="assets/images/finishicon.png"
+                        alt=""
+                    >
+                    <h3>Финал путешествия</h3>
+                    <p>
+                        Пройди все пять заданий
+                        и получи свои звёздочки.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         ЭКРАН ВОЛШЕБНОГО ЛЕСА
+    ========================== -->
+    <main id="forest-screen" class="screen forest-screen hidden">
+
+        <button
+            id="forest-back-button"
+            class="back-button"
+            type="button"
+            aria-label="Вернуться назад"
+        >
+            <img src="assets/images/back.png" alt="">
+        </button>
+
+        <div class="forest-content">
+
+            <img
+                class="forest-fox"
+                src="assets/images/forestfox.png"
+                alt="Лисёнок в лесу"
+            >
+
+            <h1>Волшебный лес</h1>
+
+            <p class="forest-subtitle">
+                Пройди задания по порядку
+                и помоги Стеше добраться до конца!
+            </p>
+
+            <div class="levels">
+
+                <button
+                    class="level-button level-1"
+                    data-level="1"
+                    type="button"
+                >
+                    <span class="level-number">1</span>
+                    <span class="level-text">Первое задание</span>
+                    <span class="level-lock">🔓</span>
+                </button>
+
+                <button
+                    class="level-button locked level-2"
+                    data-level="2"
+                    type="button"
+                    aria-disabled="true"
+                >
+                    <span class="level-number">2</span>
+                    <span class="level-text">Второе задание</span>
+                    <span class="level-lock">🔒</span>
+                </button>
+
+                <button
+                    class="level-button locked level-3"
+                    data-level="3"
+                    type="button"
+                    aria-disabled="true"
+                >
+                    <span class="level-number">3</span>
+                    <span class="level-text">Третье задание</span>
+                    <span class="level-lock">🔒</span>
+                </button>
+
+                <button
+                    class="level-button locked level-4"
+                    data-level="4"
+                    type="button"
+                    aria-disabled="true"
+                >
+                    <span class="level-number">4</span>
+                    <span class="level-text">Четвёртое задание</span>
+                    <span class="level-lock">🔒</span>
+                </button>
+
+                <button
+                    class="level-button locked level-5"
+                    data-level="5"
+                    type="button"
+                    aria-disabled="true"
+                >
+                    <span class="level-number">5</span>
+                    <span class="level-text">Финальное задание</span>
+                    <span class="level-lock">🔒</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         ЭКРАН ЗАДАНИЯ
+    ========================== -->
+    <main id="game-screen" class="screen game-screen hidden">
+
+        <button
+            id="game-back-button"
+            class="back-button"
+            type="button"
+            aria-label="Вернуться к уровням"
+        >
+            <img src="assets/images/back.png" alt="">
+        </button>
+
+        <div
+            id="task-card"
+            class="task-card"
+        >
+
+            <div class="task-top">
+                <div class="task-number">
+                    Задание <span id="task-number">1</span> из 5
+                </div>
+            </div>
+
+            <h2 id="task-title">Что это?</h2>
+
+            <div class="task-picture">
+                <img
+                    id="task-image"
+                    src="assets/images/mandarin.png"
+                    alt=""
+                >
+            </div>
+
+            <div id="answers" class="answers"></div>
+
+            <div id="voice-area" class="voice-area hidden"></div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         МОДАЛКА: НЕПРАВИЛЬНЫЙ ОТВЕТ
+    ========================== -->
+    <div id="retry-modal" class="modal hidden">
+
+        <div class="modal-window retry-window">
+
+            <button
+                class="modal-close"
+                data-close-modal
+                type="button"
+                aria-label="Закрыть"
+            >
+                ×
+            </button>
+
+            <img
+                class="modal-fox"
+                src="assets/images/foxoff.png"
+                alt="Лисёнок"
+            >
+
+            <h2>Попробуй ещё раз!</h2>
+
+            <p>
+                Ничего страшного.<br>
+                У тебя обязательно получится!
+            </p>
+
+            <button
+                id="retry-back-button"
+                class="modal-button secondary-modal-button"
+                type="button"
+            >
+                Вернуться к заданию
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         МОДАЛКА: ПРАВИЛЬНЫЙ ОТВЕТ
+    ========================== -->
+    <div id="success-modal" class="modal hidden">
+
+        <div class="modal-window success-window">
+
+            <img
+                class="modal-fox"
+                src="assets/images/fooxmodal.png"
+                alt="Лисёнок"
+            >
+
+            <h2>Молодец!</h2>
+
+            <p>
+                Ты правильно выполнил задание!
+            </p>
+
+            <div id="success-stars" class="success-stars"></div>
+
+            <button
+                id="success-next-button"
+                class="modal-button next-modal-button"
+                type="button"
+            >
+                Следующее задание
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         МОДАЛКА: УРОВЕНЬ ЗАКРЫТ
+    ========================== -->
+    <div id="locked-modal" class="modal hidden">
+
+        <div class="modal-window locked-window">
+
+            <button
+                class="modal-close"
+                data-close-modal
+                type="button"
+                aria-label="Закрыть"
+            >
+                ×
+            </button>
+
+            <img
+                class="modal-fox"
+                src="assets/images/foxoff.png"
+                alt="Лисёнок"
+            >
+
+            <h2>Этот уровень пока закрыт</h2>
+
+            <p>
+                Сначала пройди предыдущие задания.
+            </p>
+
+            <button
+                id="locked-close-button"
+                class="modal-button secondary-modal-button"
+                type="button"
+            >
+                Понятно
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         ФИНАЛ
+    ========================== -->
+    <div id="final-modal" class="modal hidden">
+
+        <div class="modal-window final-window">
+
+            <img
+                class="modal-fox"
+                src="assets/images/fooxmodal.png"
+                alt="Лисёнок"
+            >
+
+            <h2>Путешествие завершено!</h2>
+
+            <p>
+                Ты прошёл все пять заданий
+                вместе с Лисёнком Стешей!
+            </p>
+
+            <div class="final-stars">
+                <img src="assets/images/star.png" alt="">
+                <img src="assets/images/star.png" alt="">
+                <img src="assets/images/star.png" alt="">
+                <img src="assets/images/star.png" alt="">
+                <img src="assets/images/star.png" alt="">
+            </div>
+
+            <button
+                id="restart-button"
+                class="modal-button next-modal-button"
+                type="button"
+            >
+                Пройти ещё раз
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
