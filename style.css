@@ -1,0 +1,1537 @@
+/* =========================================================
+   ОБЩИЕ НАСТРОЙКИ
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #402b20;
+
+    overflow-x: hidden;
+
+    background: #f7ecd9;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+img {
+    display: block;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   ЭКРАНЫ
+========================================================= */
+
+.screen {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+
+/* =========================================================
+   ГЛАВНЫЙ ЭКРАН
+========================================================= */
+
+.home-screen {
+    min-height: 100vh;
+
+    background-image:
+        url("/assets/images/mainbackground.png.png");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.home-content {
+    width: min(100%, 1200px);
+
+    min-height: 100vh;
+
+    padding: 80px 25px 80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   ЛОГОТИП И ЗАГОЛОВОК
+========================================================= */
+
+.home-logo {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    position: relative;
+    z-index: 5;
+
+    text-align: center;
+}
+
+.home-logo img {
+    width: 125px;
+    height: 125px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+.home-logo h1 {
+    color: #402b20;
+
+    font-size: clamp(36px, 5vw, 68px);
+
+    line-height: 1.05;
+
+    font-weight: 900;
+
+    text-align: center;
+}
+
+.home-logo h1 span {
+    display: block;
+}
+
+
+/* =========================================================
+   ОБЩИЙ БЛОК КНОПОК
+========================================================= */
+
+.home-action-area {
+    width: 330px;
+
+    margin-top: 150px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+
+    z-index: 20;
+}
+
+
+/* =========================================================
+   ЛИСЁНОК + НАЧАТЬ ИГРУ
+========================================================= */
+
+.start-button-wrap {
+    width: 100%;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+}
+
+.play-btn {
+    width: 100%;
+    min-height: 70px;
+
+    padding: 15px 25px;
+
+    border-radius: 16px;
+
+    background: #e9a13a;
+    color: #ffffff;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    box-shadow:
+        0 6px 0 #b86f20,
+        0 10px 18px rgba(90, 50, 20, 0.18);
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.play-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 0 #b86f20,
+        0 13px 20px rgba(90, 50, 20, 0.2);
+}
+
+.play-btn:active {
+    transform: translateY(4px);
+
+    box-shadow:
+        0 2px 0 #b86f20;
+}
+
+
+/* Лисёнок находится визуально поверх кнопки,
+   но не блокирует её */
+
+.fox-on-top {
+    position: absolute;
+
+    width: 205px;
+    height: auto;
+
+    left: 50%;
+    top: -135px;
+
+    transform: translateX(-50%);
+
+    z-index: 5;
+
+    object-fit: contain;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   КНОПКА ПОДРОБНОСТЕЙ
+========================================================= */
+
+.secondary-button {
+    width: 100%;
+    min-height: 70px;
+
+    margin-top: 20px;
+
+    border-radius: 16px;
+
+    padding: 15px 25px;
+
+    background: #fff;
+    color: #704b30;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    box-shadow:
+        0 6px 0 #dfc7a6,
+        0 10px 18px rgba(90, 50, 20, 0.12);
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.secondary-button:hover {
+    transform: translateY(-2px);
+}
+
+.secondary-button:active {
+    transform: translateY(4px);
+
+    box-shadow:
+        0 2px 0 #dfc7a6;
+}
+
+
+/* =========================================================
+   ПОДРОБНОСТИ
+========================================================= */
+
+.details-section {
+    min-height: 100vh;
+
+    padding: 90px 22px 170px;
+
+    position: relative;
+
+    background-image:
+        url("/assets/images/mainbackground2.png.png");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+.details-container {
+    width: min(100%, 850px);
+
+    margin: 0 auto;
+
+    position: relative;
+    z-index: 2;
+}
+
+.details-container > h2 {
+    text-align: center;
+
+    font-size: clamp(42px, 6vw, 70px);
+
+    line-height: 1.05;
+
+    color: #321f16;
+
+    margin-bottom: 55px;
+}
+
+
+/* =========================================================
+   КАРТОЧКИ
+========================================================= */
+
+.details-cards {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.details-card {
+    position: relative;
+
+    min-height: 150px;
+
+    padding: 28px 30px 30px 120px;
+
+    background: rgba(255, 249, 239, 0.94);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 8px 0 rgba(177, 127, 67, 0.25),
+        0 15px 25px rgba(100, 65, 35, 0.10);
+}
+
+.details-icon {
+    position: absolute;
+
+    left: 25px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.details-icon img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.details-card h3 {
+    font-size: 28px;
+
+    margin-bottom: 10px;
+}
+
+.details-card p {
+    font-size: 16px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   СПЯЩИЙ ЛИСЁНОК
+========================================================= */
+
+.home-sleeping-fox2 {
+    width: 360px;
+
+    margin: 55px auto -120px;
+
+    position: relative;
+    z-index: 1;
+}
+
+.home-sleeping-fox2 img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* =========================================================
+   ВОЛШЕБНЫЙ ЛЕС
+========================================================= */
+
+.forest-screen {
+    min-height: 100vh;
+
+    background-image:
+        url("/assets/images/forestbackground.png.png");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+.forest-content {
+    width: min(100%, 500px);
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    padding: 25px 20px 50px;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   КНОПКА НАЗАД В ЛЕСУ
+========================================================= */
+
+.forest-back-button {
+    position: absolute;
+
+    top: 25px;
+    left: 22px;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 5px 0 #dec9aa;
+
+    z-index: 30;
+
+    transition:
+        transform 0.18s ease;
+}
+
+.forest-back-button:hover {
+    transform: translateY(-2px);
+}
+
+.forest-back-button:active {
+    transform: translateY(3px);
+}
+
+.forest-back-button img {
+    width: 27px;
+    height: 27px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   ЗАГОЛОВОК ЛЕСА
+========================================================= */
+
+.forest-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+
+    z-index: 5;
+
+    padding-top: 5px;
+}
+
+.forest-title img {
+    width: 120px;
+    height: 120px;
+
+    object-fit: contain;
+}
+
+.forest-title h2 {
+    margin-top: -8px;
+
+    font-size: 34px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 3px 0 rgba(80, 45, 25, 0.3);
+}
+
+
+/* =========================================================
+   ДОРОЖКА
+========================================================= */
+
+.level-path {
+    width: 360px;
+    height: 760px;
+
+    max-width: 100%;
+
+    margin: 20px auto 0;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+.path-svg {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.path-svg path {
+    fill: none;
+
+    stroke: rgba(255, 240, 190, 0.8);
+
+    stroke-width: 12;
+
+    stroke-linecap: round;
+
+    stroke-dasharray: 3 22;
+}
+
+
+/* =========================================================
+   УРОВНИ
+========================================================= */
+
+.level-button {
+    position: absolute;
+
+    width: 88px;
+    height: 88px;
+
+    border-radius: 50%;
+
+    background: #f4b84f;
+
+    box-shadow:
+        0 7px 0 #b76d2c,
+        0 12px 18px rgba(50, 30, 20, 0.2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 5;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+.level-button img {
+    width: 65%;
+    height: 65%;
+
+    object-fit: contain;
+}
+
+.level-button:not(:disabled):hover {
+    transform: scale(1.07);
+}
+
+.level-button:not(:disabled):active {
+    transform: scale(0.96);
+}
+
+
+/* Позиции уровней */
+
+.level-1 {
+    top: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.level-2 {
+    top: 145px;
+    right: 18px;
+}
+
+.level-3 {
+    top: 280px;
+    left: 18px;
+}
+
+.level-4 {
+    top: 420px;
+    right: 18px;
+}
+
+.level-5 {
+    top: 555px;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+
+/* =========================================================
+   ЗАБЛОКИРОВАННЫЕ УРОВНИ
+========================================================= */
+
+.level-button.locked {
+    background: #aaa;
+
+    box-shadow:
+        0 7px 0 #777,
+        0 12px 18px rgba(40, 40, 40, 0.15);
+
+    filter: grayscale(100%);
+
+    opacity: 0.62;
+}
+
+.lock-overlay {
+    position: absolute;
+
+    right: -4px;
+    bottom: -2px;
+
+    width: 29px;
+    height: 29px;
+
+    border-radius: 50%;
+
+    background: #777;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   ЛИСЁНОК ВНИЗУ ЛЕСА
+========================================================= */
+
+.forest-bottom-fox {
+    position: absolute;
+
+    width: 180px;
+
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    z-index: 4;
+}
+
+
+/* =========================================================
+   ИГРОВОЙ ЭКРАН
+========================================================= */
+
+.game-screen {
+    min-height: 100vh;
+
+    position: relative;
+
+    background-color: #fff8ec;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   ШАПКА
+========================================================= */
+
+.game-header {
+    width: 100%;
+    height: 80px;
+
+    padding: 14px 20px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    z-index: 20;
+
+    background: rgba(255, 250, 241, 0.95);
+
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+    box-shadow:
+        0 5px 15px rgba(90, 55, 30, 0.08);
+}
+
+.back-button {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 4px 0 #dec9aa;
+
+    transition:
+        transform 0.18s ease;
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+}
+
+.back-button:active {
+    transform: translateY(3px);
+}
+
+.back-button img {
+    width: 27px;
+    height: 27px;
+
+    object-fit: contain;
+}
+
+.task-counter {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    color: #60422e;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   КОНТЕНТ ЗАДАНИЯ
+========================================================= */
+
+.task-content {
+    width: min(100%, 620px);
+
+    min-height: calc(100vh - 80px);
+
+    margin: 0 auto;
+
+    padding: 45px 25px 70px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   КАРТИНКА ЗАДАНИЯ
+========================================================= */
+
+.task-image-wrapper {
+    width: 100%;
+
+    min-height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+}
+
+.task-image {
+    max-width: 310px;
+    max-height: 310px;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 8px 10px rgba(80, 45, 20, 0.08)
+        );
+}
+
+.story-image {
+    width: 300px;
+    max-width: 90%;
+
+    max-height: 300px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   ЗАГОЛОВОК
+========================================================= */
+
+.task-title {
+    font-size: 28px;
+
+    line-height: 1.2;
+
+    color: #593a29;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   ОТВЕТЫ
+========================================================= */
+
+.answers {
+    width: 100%;
+}
+
+.answers > .answer-button {
+    width: 100%;
+}
+
+.answer-button {
+    min-height: 65px;
+
+    padding: 12px;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    color: #62432f;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 0 #dfc9a9,
+        0 8px 15px rgba(80, 50, 30, 0.08);
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.answer-button:hover {
+    transform: translateY(-2px);
+}
+
+.answer-button:active {
+    transform: translateY(3px);
+
+    box-shadow:
+        0 2px 0 #dfc9a9;
+}
+
+.answers {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   ЗАДАНИЕ 5
+========================================================= */
+
+.voice-task {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.voice-button,
+.example-button,
+.finish-button {
+    width: 100%;
+
+    min-height: 62px;
+
+    border-radius: 16px;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+.voice-button {
+    background: #eaa13d;
+    color: white;
+
+    box-shadow:
+        0 5px 0 #b86d22;
+}
+
+.voice-button.recording {
+    background: #c96a52;
+
+    animation: recordingPulse 1.2s infinite;
+}
+
+@keyframes recordingPulse {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.example-button {
+    background: #ffffff;
+    color: #654530;
+
+    box-shadow:
+        0 4px 0 #dfc9a9;
+}
+
+.finish-button {
+    background: #e7e7e7;
+    color: #999;
+
+    box-shadow:
+        0 4px 0 #c9c9c9;
+}
+
+.finish-button.active {
+    background: #e9a13a;
+
+    color: white;
+
+    box-shadow:
+        0 5px 0 #b86f20;
+}
+
+.voice-task audio {
+    display: none;
+}
+
+
+/* =========================================================
+   МОДАЛКИ
+========================================================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+}
+
+.modal-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(54, 36, 23, 0.48);
+
+    backdrop-filter: blur(3px);
+}
+
+.modal-card {
+    width: min(100%, 350px);
+
+    min-height: 350px;
+
+    position: relative;
+
+    z-index: 2;
+
+    padding: 40px 25px 30px;
+
+    border-radius: 30px;
+
+    background: #fff8ec;
+
+    box-shadow:
+        0 20px 50px rgba(40, 25, 15, 0.25);
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-fox {
+    width: 125px;
+    height: 125px;
+
+    object-fit: contain;
+
+    margin-bottom: 8px;
+}
+
+.modal-card h2 {
+    font-size: 31px;
+
+    color: #68442c;
+
+    margin-bottom: 15px;
+}
+
+.modal-card p {
+    font-size: 17px;
+
+    color: #76513a;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   ЗВЁЗДЫ
+========================================================= */
+
+.success-stars,
+.final-stars {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    min-height: 55px;
+
+    margin-bottom: 20px;
+}
+
+.success-stars img,
+.final-stars img {
+    width: 45px;
+    height: 45px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 3px 4px rgba(70, 40, 20, 0.15)
+        );
+}
+
+.final-stars img {
+    width: 43px;
+    height: 43px;
+}
+
+
+/* =========================================================
+   СТРЕЛКИ МОДАЛОК
+========================================================= */
+
+.modal-arrow-button {
+    width: 64px;
+    height: 64px;
+
+    border-radius: 50%;
+
+    background: #e9a13a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 5px 0 #b86f20;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.modal-arrow-button:hover {
+    transform: scale(1.06);
+}
+
+.modal-arrow-button:active {
+    transform: scale(0.96);
+}
+
+.modal-arrow-button img {
+    width: 31px;
+    height: 31px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   LOCKED
+========================================================= */
+
+.simple-modal-card {
+    width: min(100%, 320px);
+
+    position: relative;
+
+    z-index: 2;
+
+    padding: 35px 25px;
+
+    background: #fff8ec;
+
+    border-radius: 28px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(40, 25, 15, 0.25);
+}
+
+.simple-modal-card h2 {
+    font-size: 23px;
+
+    line-height: 1.25;
+
+    margin-bottom: 25px;
+}
+
+.simple-modal-button {
+    min-width: 160px;
+
+    min-height: 50px;
+
+    padding: 13px 22px;
+
+    border-radius: 15px;
+
+    background: #e9a13a;
+
+    color: white;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ФИНАЛ
+========================================================= */
+
+.final-card {
+    min-height: 430px;
+}
+
+.restart-button {
+    width: 100%;
+
+    min-height: 58px;
+
+    border-radius: 16px;
+
+    background: #e9a13a;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 0 #b86f20;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.restart-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   ЗАПИСЬ
+========================================================= */
+
+.voice-status {
+    position: fixed;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
+    z-index: 2000;
+
+    padding: 13px 20px;
+
+    border-radius: 20px;
+
+    background: #402b20;
+
+    color: white;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 8px 25px rgba(40, 25, 15, 0.2);
+}
+
+
+/* =========================================================
+   ТЕЛЕФОН
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .home-content {
+        padding-top: 55px;
+        padding-bottom: 60px;
+    }
+
+    .home-logo {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .home-logo img {
+        width: 115px;
+        height: 115px;
+    }
+
+    .home-logo h1 {
+        font-size: clamp(35px, 10vw, 48px);
+
+        line-height: 1.04;
+    }
+
+    .home-logo h1 span {
+        display: block;
+    }
+
+    .home-action-area {
+        width: min(320px, 88vw);
+
+        margin-top: 155px;
+    }
+
+    .fox-on-top {
+        width: 190px;
+
+        top: -125px;
+    }
+
+    .play-btn,
+    .secondary-button {
+        min-height: 64px;
+
+        font-size: 18px;
+    }
+
+    .details-section {
+        padding-top: 70px;
+    }
+
+    .details-container > h2 {
+        font-size: 43px;
+    }
+
+    .details-card {
+        padding-left: 95px;
+    }
+
+    .details-icon {
+        left: 17px;
+
+        width: 60px;
+        height: 60px;
+    }
+
+    .details-card h3 {
+        font-size: 24px;
+    }
+
+    .details-card p {
+        font-size: 14px;
+    }
+
+    .level-path {
+        width: 340px;
+    }
+
+    .task-content {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .task-image-wrapper {
+        min-height: 260px;
+    }
+
+    .task-image {
+        max-width: 250px;
+        max-height: 250px;
+    }
+
+    .task-title {
+        font-size: 24px;
+    }
+
+    .answer-button {
+        min-height: 58px;
+
+        font-size: 16px;
+    }
+
+    .success-stars img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .final-stars img {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+
+/* =========================================================
+   ОЧЕНЬ МАЛЕНЬКИЙ ТЕЛЕФОН
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .home-logo h1 {
+        font-size: 34px;
+    }
+
+    .home-logo img {
+        width: 95px;
+        height: 95px;
+    }
+
+    .home-action-area {
+        width: 285px;
+    }
+
+    .fox-on-top {
+        width: 175px;
+
+        top: -115px;
+    }
+
+    .details-container > h2 {
+        font-size: 37px;
+    }
+
+    .answers {
+        grid-template-columns: 1fr;
+    }
+
+    .level-path {
+        width: 310px;
+    }
+
+    .level-button {
+        width: 78px;
+        height: 78px;
+    }
+}
+
+
+/* =========================================================
+   КОМПЬЮТЕР
+========================================================= */
+
+@media (min-width: 900px) {
+
+    .home-content {
+        padding-top: 80px;
+    }
+
+    .home-logo {
+        flex-direction: row;
+    }
+
+    .home-logo h1 {
+        white-space: nowrap;
+    }
+
+    .home-logo h1 span {
+        display: inline;
+    }
+
+    .home-logo h1 span + span::before {
+        content: " ";
+    }
+
+    .home-logo img {
+        width: 145px;
+        height: 145px;
+    }
+
+    .home-action-area {
+        width: 350px;
+
+        margin-top: 180px;
+    }
+
+    .fox-on-top {
+        width: 220px;
+
+        top: -150px;
+    }
+
+    .details-container {
+        width: 900px;
+    }
+
+    .details-cards {
+        gap: 25px;
+    }
+
+    .details-card {
+        min-height: 165px;
+    }
+
+    .forest-content {
+        width: 520px;
+    }
+
+    .level-path {
+        width: 390px;
+        height: 780px;
+    }
+
+    .task-content {
+        width: 650px;
+
+        padding-top: 55px;
+    }
+
+    .task-image {
+        max-width: 350px;
+        max-height: 350px;
+    }
+}
+
+
+/* =========================================================
+   БОЛЬШОЙ КОМПЬЮТЕР
+========================================================= */
+
+@media (min-width: 1400px) {
+
+    .home-logo h1 {
+        font-size: 70px;
+    }
+
+    .home-logo img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .home-action-area {
+        margin-top: 200px;
+    }
+
+    .fox-on-top {
+        width: 240px;
+        top: -165px;
+    }
+
+    .details-container {
+        width: 1000px;
+    }
+}
